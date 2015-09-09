@@ -34,7 +34,7 @@
     <div class="navbar-header">
       <nav class="navbar navbar-dark navbar-static-top bg-inverse">
         <div class="container">
-          <a class="navbar-brand" href="/">pyconve_site</a>
+          <a class="navbar-brand" href="/">PyConVe 2016</a>
           <button type="button" class="navbar-toggler hidden-sm-up pull-right" data-toggle="collapse" data-target="#bs-navbar-collapse-1">
             &#9776;
           </button>
@@ -68,8 +68,47 @@
           {% endfor %}
       {% endif %}
 
+      {% block header %}
+
+      <header>
+          <div class="container">
+              <div class="col-md-12">
+                  <h1>PyConVe 2016</h1>
+              </div>
+          </div>
+      </header>
+
+      {% endblock header %}
+
       {% block content %}
       {% endblock content %}
+
+      {% block social %}
+      
+      <section class="social">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-12">
+                      <h1>Conéctate con nosotros...</h1>
+                      <a class="icon-facebook" href="" target='blank'></a>
+                      <a class="icon-twitter" href="" target='blank'></a>
+                  </div>
+              </div>
+          </div>      
+      </section>
+      {% endblock social %}
+
+      {% block footer %}
+      <footer>
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-12">
+                      PyConVe 2012 - 2015
+                  </div>
+              </div>
+          </div>
+      </footer>
+      {% endblock footer %}
 
     </div> <!-- /container -->
 
