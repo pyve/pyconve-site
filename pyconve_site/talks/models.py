@@ -16,9 +16,13 @@ class Talk(models.Model):
             (2, _('Workshop')),
             )
 
-    title = models.CharField(_("Title"), blank=True, max_length=255)
+
+    speaker_name = models.CharField(_("Name"), blank=False, null=False, max_length=255)
+    email = models.EmailField(_("Email"), blank=False, null=False, default="noreply@ve.pycon.org")
+
+    title = models.CharField(_("Title"), blank=False, null=False, max_length=255)
     talk_type = models.IntegerField(_("Type"), choices=CHOICES)
-    short_description = models.TextField(_("Description"))
+    short_description = models.TextField(_("Description"), blank=False, null=False)
     approved = models.BooleanField(default=False)
 
     def __str__(self):
