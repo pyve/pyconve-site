@@ -1,0 +1,3 @@
+[run]
+include = pyconve_site/*
+omit = *migrations*
