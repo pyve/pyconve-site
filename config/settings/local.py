@@ -6,6 +6,7 @@ Local settings
 - Use console backend for emails
 - Add Django Debug Toolbar
 - Add django-extensions as app
+- Use SQLite as the database
 '''
 
 from .common import *  # noqa
@@ -20,6 +21,15 @@ TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 # Note: This key only used for development and testing.
 SECRET_KEY = env("DJANGO_SECRET_KEY", default='CHANGEME!!!')
+
+# Database settings
+# ------------------------------------------------------------------------------
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'dev.db'
+        },
+}
 
 # Mail settings
 # ------------------------------------------------------------------------------
