@@ -40,11 +40,38 @@
 // Header styles
 
 header {
+    padding: 20px 0px 20px 0px;
+    margin: 10px;
     text-align: center;
+
+    .logo {
+        display: block;
+        margin: auto;
+        height: 150px;
+        width: 150px;
+    }
 }
+
 
 // Footer styles
 footer {
-    background-color: #4687B0;
+    background-color: #FED359;
+    padding: 20px 0px 20px 0px;
+    margin-top: 0px;
     text-align: center;
 }
+
+.social {
+    background-color: #4687B0;
+    padding: 20px 0px 20px 0px;
+    margin-bottom: 0px;
+
+    .icon-twitter {
+        display: block;
+        margin: auto;
+        height: 50px;
+        width: 50px;
+    }
+}
+
+

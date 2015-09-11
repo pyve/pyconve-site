@@ -1,9 +1,9 @@
 {% load staticfiles i18n %}<!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>{% block title %}pyconve_site{% endblock title %}</title>
+    <title>{% block title %}PYCON Venezuela 2016{% endblock title %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -30,7 +30,6 @@
   </head>
 
   <body>
-    
     <div class="navbar-header">
       <nav class="navbar navbar-dark navbar-static-top bg-inverse">
         <div class="container">
@@ -44,73 +43,71 @@
             <ul class="nav navbar-nav">
               <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Inicio</a></li>
               <li class="nav-item"><a class="nav-link" href="#about">Acerca de...</a></li>
+              <li class="nav-item"><a class="nav-link" href="#social">Social</a></li>
             </ul>
-        
+
+            {% comment %}
             <ul class="nav navbar-nav pull-right">
-              {% if request.user.is_authenticated %}
+                {% if request.user.is_authenticated %}
                 <li class="nav-item"><a class="nav-link" href="{% url 'users:detail' request.user.username  %}">{% trans "My Profile" %}</a></li>
                 <li class="nav-item"><a class="nav-link" href="{% url 'account_logout' %}">{% trans "Logout" %}</a></li>
-              {% else %}
+                {% else %}
                 <li class="nav-item"><a class="nav-link" href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a></li>
                 <li class="nav-item"><a class="nav-link" href="{% url 'account_login' %}">{% trans "Log In" %}</a></li>
-              {% endif %}
+                {% endif %}
             </ul>
+            {% endcomment %}
           </div>
         </div>
       </nav>
     </div>
 
-    <div class="container">
-
-      {% if messages %}
-          {% for message in messages %}
-              <div class="alert {% if message.tags %}alert-{{ message.tags }}"{% endif %}>{{ message }}</div>
-          {% endfor %}
-      {% endif %}
+    <div class="container-fluid">
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert {% if message.tags %}alert-{{ message.tags }}"{% endif %}>{{ message }}</div>
+        {% endfor %}
+        {% endif %}
+    </div>
 
       {% block header %}
-
-      <header>
-          <div class="container">
+      <header class="container-fluid">
+          <div class="row">
               <div class="col-md-12">
-                  <h1>PyConVe 2016</h1>
+                  <div class="center-block"> 
+                      <img src="{% static 'images/python_logo.png' %}" class="logo">
+                      <h1 class="text-uppercase">PyCon Venezuela 2016</h1>
+                      <p class="lead">Mérida</p>
+                  </div>
               </div>
           </div>
       </header>
-
       {% endblock header %}
 
       {% block content %}
       {% endblock content %}
-
-      {% block social %}
       
-      <section class="social">
-          <div class="container">
-              <div class="row">
-                  <div class="col-md-12">
-                      <h1>Conéctate con nosotros...</h1>
-                      <a class="icon-facebook" href="" target='blank'></a>
-                      <a class="icon-twitter" href="" target='blank'></a>
-                  </div>
+      {% block social %}
+      <section id="social" class="social container-fluid">
+          <div class="row">
+              <div class="col-md-12">
+                  <a href="https://twitter.com/PyConVE" target='blank'>
+                      <img src="{% static 'images/twitter_logo.png' %}" class="icon-twitter">
+                  </a>
               </div>
-          </div>      
+          </div>
       </section>
       {% endblock social %}
 
       {% block footer %}
-      <footer>
-          <div class="container">
-              <div class="row">
-                  <div class="col-md-12">
-                      PyConVe 2012 - 2015
-                  </div>
+      <footer class="container-fluid">
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="center-block">PyConVe 2012 - 2015 - <a href="http://www.python.org.ve">Fundación Python Venezuela</a></div>
               </div>
           </div>
       </footer>
       {% endblock footer %}
-
-    </div> <!-- /container -->
 
     {% block modal %}{% endblock modal %}
 
