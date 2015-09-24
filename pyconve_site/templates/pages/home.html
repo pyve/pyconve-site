@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 
-
 {% block content %}
     <section id="about">
         <div class="container-fluid">
@@ -27,6 +26,16 @@
                     <p>Las charlas y conferencias son llevadas a cabo por personas voluntarias pertenecientes a la comunidad Python y que pretenden difundir conocimientos adquiridos, mostrar el uso de nuevas tecnologías o simplemente promover y fomentar el uso de este lenguaje de programación.</p>
 
                     <p>En estas conferencias es fácil encontrarse con charlas informativas e inspiradoras que permiten involucrarse con mayor entusiasmo en el desarrollo de nuevos proyectos en Python y facilitan establecer contactos y amigos entre los distintos asistentes. Por lo general, estas charlas suelen tener una duración de 40 minutos.</p>
+                </div>
+            </div>
+    </section>
+    <section id="talks">
+        <div class="container-fluid">
+            <h1>¿Quieres hacer una presentación en el PyCon?</h1>
+            <div class="row">
+                <div class="col-md-offset-2 col-md-8">
+                    {% lorem 1 p %}
+                    <p class="text-center"><a  href="{% url 'talks:create' %}" class="btn btn-primary bnt-lg">Regístrate Aquí</a></p>
                 </div>
             </div>
     </section>
