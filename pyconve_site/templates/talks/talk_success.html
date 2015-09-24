@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %} 
+
+{% block title %}{% trans "Registration submitted" %}{% endblock %}
+
+
+{% block content %}
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <h1>{% trans "Thank you!" %}</h1>
+            <p>{% trans "Your submission wil be reviewed by the organizer team." %}</p>
+      </div>
+  </div>
+
+</div>
+{% endblock content %}
+
